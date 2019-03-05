@@ -3,7 +3,7 @@ WORKDIR /go/src/github.com/ing-bank/flink-deployer/
 COPY . .
 RUN go build ./cmd/cli
 
-FROM alpine:3.8
+FROM ez123/ops-base:alpine38
 WORKDIR /flink-deployer
 COPY --from=build /go/src/github.com/ing-bank/flink-deployer/cli .
 VOLUME [ "/data/flink" ]
